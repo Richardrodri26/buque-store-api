@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bills",
+  "info": {
+    "singularName": "bill",
+    "pluralName": "bills",
+    "displayName": "bill"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product"
+    },
+    "purchaseDate": {
+      "type": "date"
+    },
+    "TotalBill": {
+      "type": "float"
+    },
+    "Client": {
+      "type": "string"
+    },
+    "billSlug": {
+      "type": "uid",
+      "targetField": "Client",
+      "minLength": 1,
+      "required": true
+    }
+  }
+}
